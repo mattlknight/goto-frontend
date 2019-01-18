@@ -67,17 +67,17 @@ $keyword-list-item-badge-padding-bottom: 0;
         position: relative;
         width: $keyword-list-item-badge-width + $keyword-list-item-width;
 
-        .selected {
+        &.selected {
             background-color: $keyword-list-item-selected-bg;
             color: $white;
 
-            :hover {
+            &:hover {
                 background-color: $keyword-list-item-selected-bg-hover;
                 color: $white;
             }
         }
 
-        :hover {
+        &:hover {
             background-color: $light-grey;
             color: $keyword-list-item-badge-bg;
             left: .1em;
