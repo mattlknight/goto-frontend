@@ -6,10 +6,10 @@
       <div class="col">
         <div *ngFor='let message of messageService.messages'
               class="row alert alert-{{message.status}} alert-dismissible message-item">
-            <div class="col-2 message-title text-wrap">
+            <div class="col-3 message-title text-center">
                 {{message.title}}
             </div>
-            <div class="col-10 message">
+            <div class="col-9 message">
                 {{message.message}}
                 <button type="button" class="close" (click)="messageService.close(message)">
                     <div class="close-icon">&times;</div>

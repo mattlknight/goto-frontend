@@ -11,29 +11,36 @@ $keyword-list-item-badge-bg: #607d8b;
 $keyword-list-item-border-radius: .3rem;
 $keyword-list-item-font-size: 1rem;
 $keyword-list-item-height: 2rem;
-$keyword-list-item-width: 16rem;
+$keyword-list-item-width: 14rem;
 $keyword-list-item-gap: .3rem;
-$keyword-list-item-padding: .2rem;
+$keyword-list-item-padding: .5rem;
 
 // Keyword List Item Badge
-$keyword-list-item-badge-font-size: 1.2rem;
+$keyword-list-item-badge-font-size: 1rem;
 $keyword-list-item-badge-height: $keyword-list-item-height;
 $keyword-list-item-badge-width: 5rem;
+$keyword-list-item-badge-padding-sides: .5rem;
+$keyword-list-item-badge-padding-bottom: 0;
+
+.keyword-list {
+    margin-left: 1rem;
+}
+
+.no-side-pad {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.no-side-margin {
+    margin-left: 0;
+    margin-right: 0;
+}
 
 .container-fluid {
     padding: 0 .2rem;
 }
 
-.selected {
-    background-color: $keyword-list-item-selected-bg;
-    color: $white;
-}
-
 .keyword-details {
-    .heading {
-
-    }
-
     .keyword {
         color: $fuchsia;
         display: inline-block;
@@ -54,13 +61,16 @@ $keyword-list-item-badge-width: 5rem;
         display: inline-flex;
         height: $keyword-list-item-height;
         left: 0;
-        line-height: $keyword-list-item-height;
+        line-height: $keyword-list-item-badge-font-size;
         margin: $keyword-list-item-gap;
         padding: 0;
         position: relative;
         width: $keyword-list-item-badge-width + $keyword-list-item-width;
 
         .selected {
+            background-color: $keyword-list-item-selected-bg;
+            color: $white;
+
             :hover {
                 background-color: $keyword-list-item-selected-bg-hover;
                 color: $white;
@@ -74,19 +84,23 @@ $keyword-list-item-badge-width: 5rem;
         }
     }
 
+    .keyword-badge,
+    .keyword-url {
+        flex-direction: column;
+        height: 100%;
+        justify-content: center;
+        line-height: $keyword-list-item-font-size;
+    }
+
     .keyword-badge {
         background-color: $keyword-list-item-badge-bg;
         border-radius: $keyword-list-item-border-radius 0 0 $keyword-list-item-border-radius;
         color: $white;
-        display: inline-block;
         font-size: $keyword-list-item-badge-font-size;
-        height: $keyword-list-item-badge-height;
-        // left: -1px;
-        // line-height: $keyword-list-item-badge-height;
+        font-weight: 500;
         margin-right: 0;
-        padding: 0 $keyword-list-item-padding;
+        padding: 0 $keyword-list-item-badge-padding-sides $keyword-list-item-badge-padding-bottom;
         position: relative;
-        // top: -$keyword-list-item-border-radius;
         width: $keyword-list-item-badge-width;
     }
 

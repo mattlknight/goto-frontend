@@ -6,8 +6,9 @@ $darken-70: rgba(0, 0, 0, .7);
 $lighten-30: rgba(255, 255, 255, .2);
 $lighten-60: rgba(255, 255, 255, .6);
 
-$message-height: 2rem;
-$message-icon-height: 1rem;
+$message-title-font-size: 1.3rem;
+$message-icon-font-size: 1.4rem;
+$message-height: $message-icon-font-size * 2;
 
 .container-fluid {
     padding: 0;
@@ -37,17 +38,23 @@ $message-icon-height: 1rem;
         width: 100%;
     }
 
+    .message-title {
+        font-size: $message-title-font-size;
+        font-weight: 500;
+    }
+
     .message {
         background-color: $lighten-60;
 
         .close {
             padding: 0;
-            right: $message-icon-height;
-            top: $message-icon-height / 2;
+            right: $message-icon-font-size / 2;
+            top: $message-icon-font-size / 2;
         }
     }
 
     .close-icon {
-        font-size: $message-icon-height;
+        font-size: $message-icon-font-size;
+        line-height: $message-icon-font-size;
     }
 }
