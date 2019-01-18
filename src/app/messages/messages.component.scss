@@ -1,0 +1,36 @@
+$darken-30: rgba(0, 0, 0, .3);
+$darken-60: rgba(0, 0, 0, .6);
+$lighten-30: rgba(255, 255, 255, .3);
+$lighten-60: rgba(255, 255, 255, .6);
+
+.container-fluid {
+    padding: 0;
+}
+
+.message-box {
+    margin: 0 2rem .4rem;
+
+    row {
+        margin: 0;
+    }
+}
+
+.message-item {
+    display: flex;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+.message-title {
+    background-color: $darken-30;
+    color: $lighten-30;
+    font-size: 1.5rem;
+    font-weight: 700;
+    // height: 100%;
+    margin-right: 1rem;
+    padding: 0.2rem;
+}
+
+.message-message {
+
+}

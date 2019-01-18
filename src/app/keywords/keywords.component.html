@@ -1,0 +1,33 @@
+<div class="container-fluid">
+    <div class="row justify-content-center" *ngIf="selectedKeyword">
+        <div class="col-6">
+            <div class="row">
+                <div class="col">
+                    <div class="keyword-details heading">Keyword Details: <span class="keyword-details keyword text-truncate">{{selectedKeyword.keyword}}</span></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label>URL:
+                        <input [(ngModel)]="selectedKeyword.url" placeholder="URL">
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <h2>Keywords</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <ul class="keywords">
+                <li class="d-flex align-items-center" *ngFor="let keyword of keywords" (click)="onSelect(keyword)" [class.selected]="keyword === selectedKeyword">
+                    <span class="keyword-badge text-center text-truncate">{{keyword.keyword}}</span><span class="text-truncate keyword-url">{{keyword.url}}</span>
+                    <!-- <span class="badge align-middle">{{keyword.keyword}}</span><span class="keyword-url align-middle">{{keyword.url}}</span> -->
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

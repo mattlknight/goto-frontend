@@ -1,0 +1,97 @@
+// Colors
+$light-grey: #ddd;
+$near-white: #eee;
+$white: #fff;
+$fuchsia: #ca2c92;
+$keyword-list-item-selected-bg-hover: #bbd8dc;
+$keyword-list-item-selected-bg: #cfd8dc;
+$keyword-list-item-badge-bg: #607d8b;
+
+// Keyword List Item
+$keyword-list-item-border-radius: .3rem;
+$keyword-list-item-font-size: 1rem;
+$keyword-list-item-height: 2rem;
+$keyword-list-item-width: 16rem;
+$keyword-list-item-gap: .3rem;
+$keyword-list-item-padding: .2rem;
+
+// Keyword List Item Badge
+$keyword-list-item-badge-font-size: 1.2rem;
+$keyword-list-item-badge-height: $keyword-list-item-height;
+$keyword-list-item-badge-width: 5rem;
+
+.container-fluid {
+    padding: 0 .2rem;
+}
+
+.selected {
+    background-color: $keyword-list-item-selected-bg;
+    color: $white;
+}
+
+.keyword-details {
+    .heading {
+
+    }
+
+    .keyword {
+        color: $fuchsia;
+        display: inline-block;
+        font-size: 2.8rem;
+        font-weight: 600;
+        max-width: 10rem;
+    }
+}
+
+.keywords {
+    list-style-type: none;
+    padding: 0;
+
+    li {
+        background-color: $near-white;
+        border-radius: $keyword-list-item-border-radius;
+        cursor: pointer;
+        display: inline-flex;
+        height: $keyword-list-item-height;
+        left: 0;
+        line-height: $keyword-list-item-height;
+        margin: $keyword-list-item-gap;
+        padding: 0;
+        position: relative;
+        width: $keyword-list-item-badge-width + $keyword-list-item-width;
+
+        .selected {
+            :hover {
+                background-color: $keyword-list-item-selected-bg-hover;
+                color: $white;
+            }
+        }
+
+        :hover {
+            background-color: $light-grey;
+            color: $keyword-list-item-badge-bg;
+            left: .1em;
+        }
+    }
+
+    .keyword-badge {
+        background-color: $keyword-list-item-badge-bg;
+        border-radius: $keyword-list-item-border-radius 0 0 $keyword-list-item-border-radius;
+        color: $white;
+        display: inline-block;
+        font-size: $keyword-list-item-badge-font-size;
+        height: $keyword-list-item-badge-height;
+        // left: -1px;
+        // line-height: $keyword-list-item-badge-height;
+        margin-right: 0;
+        padding: 0 $keyword-list-item-padding;
+        position: relative;
+        // top: -$keyword-list-item-border-radius;
+        width: $keyword-list-item-badge-width;
+    }
+
+    .keyword-url {
+        padding: 0 $keyword-list-item-padding;
+        width: $keyword-list-item-width;
+    }
+}
