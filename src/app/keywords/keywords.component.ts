@@ -27,11 +27,12 @@ export class KeywordsComponent implements OnInit {
     this.keywordService.getKeywords()
         .subscribe(keywords => {
           this.keywords = keywords;
-          console.log("Updated KeywordsComponent.keywords");
-          this.messageService.add({status: MessageStatus.Success, title: "KeywordService", message: "Fetched Keywords!"});
         }, err => {
           console.error(`Error updating KeywordsComponent.keywords ${err}`);
           this.messageService.add({status: MessageStatus.Danger, title: "KeywordService", message: `Error updating KeywordsComponent.keywords ${err}`});
+        }, () => {
+          console.log("Updated KeywordsComponent.keywords");
+          this.messageService.add({status: MessageStatus.Success, title: "KeywordService", message: "Fetched Keywords!"});
         });
   }
 
