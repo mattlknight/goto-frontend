@@ -1,6 +1,22 @@
 # Goto-FrontEnd
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.1.
+# Dev Machine Setup
+- Dependencies
+ - oh-my-zsh `sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"`
+ - zsh-nvm
+   - `git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm`
+   - Add `zsh-nvm` as the first plugin in the `~/.zshrc` plugins list
+   - Add `nvm use default` to the bottom of `~/.zshrc`
+ - nvm `curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash`
+ - node/npm `nvm install --lts`
+ - @angular/cli `npm install -g @angular/cli`
+ - sass-list `npm install -g sass-lint`
+ - Atom Packages
+   - atom-beautify
+   - atom-ide-ui
+   - ide-css
+   - linter-cass-lint
+   - sort-lines
 
 ## Development server
 
