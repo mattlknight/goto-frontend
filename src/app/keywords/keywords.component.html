@@ -1,20 +1,5 @@
 <div class="container-fluid keyword-list">
-    <div class="row justify-content-center no-side-margin" *ngIf="selectedKeyword">
-        <div class="col-6">
-            <div class="row">
-                <div class="col">
-                    <div class="keyword-details heading">Keyword Details: <span class="keyword-details keyword text-truncate">{{selectedKeyword.keyword}}</span></div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <label>URL:
-                        <input [(ngModel)]="selectedKeyword.url" placeholder="URL">
-                    </label>
-                </div>
-            </div>
-        </div>
-    </div>
+    <app-keyword-detail [keyword]="selectedKeyword"></app-keyword-detail>
     <div class="row no-side-margin">
         <div class="col no-side-pad text-center">
             <h2>Keywords</h2>
@@ -23,8 +8,16 @@
     <div class="row no-side-margin">
         <div class="col no-side-pad">
             <ul class="keywords">
-                <li class="d-flex align-items-center" *ngFor="let keyword of keywords" (click)="onSelect(keyword)" [class.selected]="keyword === selectedKeyword">
-                    <span class="d-flex h-100 keyword-badge"><span class=" text-truncate ">{{keyword.keyword}}</span></span><span class="d-flex h-100 text-truncate keyword-url"><span class=" text-truncate ">{{keyword.url}}</span></span>
+                <li class="d-flex align-items-center" *ngFor="let keyword of keywords">
+                    <span class="d-flex h-100" (click)="keywordService.redirectToKeyword(keyword)">
+                      <span class="d-flex h-100 keyword-badge">
+                        <span class=" text-truncate ">{{keyword.keyword}}</span>
+                      </span>
+                      <span class="d-flex h-100 text-truncate keyword-url">
+                        <span class=" text-truncate ">{{keyword.url}}</span>
+                      </span>
+                    </span>
+                    <a href="" routerLink="/edit/{{keyword.keyword}}" class="text-decoration-none"><fa-icon [icon]="['far', 'edit']" pull="right"></fa-icon></a>
                 </li>
             </ul>
         </div>

@@ -1,32 +1,4 @@
 <div class="container-fluid no-side-pad">
-  <div class="row justify-content-center no-side-margin">
-      <div class="col-auto">
-          <p>Submit a Keyword with a URL.</p>
-      </div>
-  </div>
-  <div class="row justify-content-center no-side-margin">
-      <div class="col-auto">
-          <form action="/" method="post">
-              <div class="form-row">
-                  <div class="col-auto">
-                      <input type="text" class="form-control" id="inputKeyword" name="inputKeyword" placeholder="keyword">
-                  </div>
-                  <div class="col-auto">
-                      <input type="text" class="form-control" id="inputUrl" name="inputUrl" placeholder="URL">
-                  </div>
-                  <div class="col-auto">
-                      <button type="submit" class="btn btn-primary">Submit</button>
-                  </div>
-              </div>
-          </form>
-      </div>
-  </div>
-  <div class="row justify-content-center no-side-margin">
-      <div class="col-auto">
-          <p></p>
-          <p>In a browser address bar, navigate to goto/keyword using the keyword you submitted.</p>
-          <p>You may also click on any of the keywords listed on this page.</p>
-      </div>
-  </div>
+  <app-keyword-submit></app-keyword-submit>
   <app-keywords></app-keywords>
 </div>

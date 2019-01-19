@@ -14,13 +14,17 @@ export class MessageService {
   }
 
   add(message: Message) {
+    message.open = true;
     this.messages.push(message);
+    setTimeout(() => { message.open = false; }, 5000);
   }
 
   close(message: Message) {
     const index = this.messages.indexOf(message)
     if (index > -1) {
-      this.messages.splice(index, 1);
+      setTimeout(() => {
+        this.messages.splice(index, 1);
+      }, 3000);
     }
   }
 }

@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { KeywordEditComponent } from './keyword-edit/keyword-edit.component';
 
 const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
+  { path: 'edit/:keyword', component: KeywordEditComponent },
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
 ];
 

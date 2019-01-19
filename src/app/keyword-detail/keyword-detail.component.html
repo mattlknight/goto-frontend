@@ -1,3 +1,16 @@
-<p>
-  keyword-detail works!
-</p>
+<div class="row justify-content-center no-side-margin" *ngIf="keyword">
+    <div class="col-6">
+        <div class="row">
+            <div class="col">
+                <div class="keyword-details heading">Keyword Details: <span class="keyword-details keyword text-truncate">{{keyword.keyword}}</span></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label>URL:
+                    <input [(ngModel)]="keyword.url" placeholder="URL">
+                </label>
+            </div>
+        </div>
+    </div>
+</div>

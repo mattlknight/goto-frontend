@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { KeywordPair } from '../common/index';
-import { KeywordService } from '../services/index';
+import { Observable, of, interval } from 'rxjs';
+import { KeywordPair, MessageStatus } from '../common/index';
+import { KeywordService, MessageService } from '../services/index';
+
+const secondsCounter = interval(10000);
 
 @Component({
   selector: 'app-keywords',
@@ -11,19 +14,25 @@ export class KeywordsComponent implements OnInit {
   keywords: KeywordPair[];
   selectedKeyword: KeywordPair;
 
-  constructor(private keywordService: KeywordService) { }
+  constructor(private keywordService: KeywordService, public messageService: MessageService) { }
 
   ngOnInit() {
     this.getKeywords();
+    secondsCounter.subscribe( () => {
+      this.getKeywords();
+    })
   }
 
   getKeywords(): void {
     this.keywordService.getKeywords()
-        .subscribe(keywords => this.keywords = keywords);
-  }
-
-  onSelect(keyword: KeywordPair): void {
-    this.selectedKeyword = keyword;
+        .subscribe(keywords => {
+          this.keywords = keywords;
+          console.log("Updated KeywordsComponent.keywords");
+          this.messageService.add({status: MessageStatus.Success, title: "KeywordService", message: "Fetched Keywords!"});
+        }, err => {
+          console.error(`Error updating KeywordsComponent.keywords ${err}`);
+          this.messageService.add({status: MessageStatus.Danger, title: "KeywordService", message: `Error updating KeywordsComponent.keywords ${err}`});
+        });
   }
 
 }

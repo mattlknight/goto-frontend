@@ -6,4 +6,5 @@ export class Message {
   message: string;
   buttonTitle?: string;
   buttonLink?: string;
+  open?: boolean;
 }

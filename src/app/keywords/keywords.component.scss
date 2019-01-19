@@ -1,8 +1,9 @@
+@import '../../colors.scss';
+
 // Colors
 $light-grey: #ddd;
 $near-white: #eee;
 $white: #fff;
-$fuchsia: #ca2c92;
 $keyword-list-item-selected-bg-hover: #bbd8dc;
 $keyword-list-item-selected-bg: #cfd8dc;
 $keyword-list-item-badge-bg: #607d8b;
@@ -22,6 +23,9 @@ $keyword-list-item-badge-width: 5rem;
 $keyword-list-item-badge-padding-sides: .5rem;
 $keyword-list-item-badge-padding-bottom: 0;
 
+// Keyword List Item Icon
+$keyword-list-item-icon-width: 2rem;
+
 .keyword-list {
     margin-left: 1rem;
 }
@@ -40,16 +44,6 @@ $keyword-list-item-badge-padding-bottom: 0;
     padding: 0 .2rem;
 }
 
-.keyword-details {
-    .keyword {
-        color: $fuchsia;
-        display: inline-block;
-        font-size: 2.8rem;
-        font-weight: 600;
-        max-width: 10rem;
-    }
-}
-
 .keywords {
     list-style-type: none;
     padding: 0;
@@ -65,7 +59,7 @@ $keyword-list-item-badge-padding-bottom: 0;
         margin: $keyword-list-item-gap;
         padding: 0;
         position: relative;
-        width: $keyword-list-item-badge-width + $keyword-list-item-width;
+        width: $keyword-list-item-badge-width + $keyword-list-item-width + $keyword-list-item-icon-width;
 
         &.selected {
             background-color: $keyword-list-item-selected-bg;
@@ -81,6 +75,11 @@ $keyword-list-item-badge-padding-bottom: 0;
             background-color: $light-grey;
             color: $keyword-list-item-badge-bg;
             left: .1em;
+        }
+
+        fa-icon {
+            color: $orange;
+            padding-right: .1rem;
         }
     }
 

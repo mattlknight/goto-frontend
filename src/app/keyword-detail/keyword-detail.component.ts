@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { KeywordPair } from '../common/index';
 
 @Component({
   selector: 'app-keyword-detail',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./keyword-detail.component.scss']
 })
 export class KeywordDetailComponent implements OnInit {
+
+  @Input() keyword: KeywordPair;
 
   constructor() { }
 

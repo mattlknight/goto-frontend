@@ -1,0 +1,11 @@
+@import '../../colors.scss';
+
+.keyword-details {
+    .keyword {
+        color: $fuchsia;
+        display: inline-block;
+        font-size: 2.8rem;
+        font-weight: 600;
+        max-width: 10rem;
+    }
+}

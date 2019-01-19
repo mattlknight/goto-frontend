@@ -2,19 +2,21 @@
     <span>TEST Message</span>
 </button> -->
 <div *ngIf="messageService.messages.length"
-      class="row message-box">
+      class="row message-box sticky-top">
       <div class="col">
-        <div *ngFor='let message of messageService.messages'
-              class="row alert alert-{{message.status}} alert-dismissible message-item">
-            <div class="col-3 message-title text-center">
-                {{message.title}}
-            </div>
-            <div class="col-9 message">
-                {{message.message}}
-                <button type="button" class="close" (click)="messageService.close(message)">
-                    <div class="close-icon">&times;</div>
-                </button>
-            </div>
-        </div>
+        <ng-container *ngFor='let message of messageService.messages'>
+              <div [@fadeInOutTranslate] (@fadeInOutTranslate.done)="closeMessage(message, $event)" *ngIf="message.open === true"
+                class="row alert alert-{{message.status}} alert-dismissible message-item">
+                <div class="col-3 message-title text-center">
+                    {{message.title}}
+                </div>
+                <div class="col-9 message">
+                    {{message.message}}
+                    <button type="button" class="close" (click)="hideMessage(message)">
+                        <div class="close-icon">&times;</div>
+                    </button>
+                </div>
+              </div>
+        </ng-container>
       </div>
 </div>

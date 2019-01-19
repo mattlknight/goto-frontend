@@ -20,6 +20,7 @@ $yellow:  #ffc107 !default;
 $green:   #28a745 !default;
 $teal:    #20c997 !default;
 $cyan:    #17a2b8 !default;
+$fuchsia: #ca2c92 !default;
 
 $primary:       $blue !default;
 $secondary:     $gray-600 !default;
@@ -29,3 +30,9 @@ $warning:       $yellow !default;
 $danger:        $red !default;
 $light:         $gray-100 !default;
 $dark:          $gray-800 !default;
+
+$darken-30: rgba(0, 0, 0, .3);
+$darken-60: rgba(0, 0, 0, .6);
+$darken-70: rgba(0, 0, 0, .7);
+$lighten-30: rgba(255, 255, 255, .2);
+$lighten-60: rgba(255, 255, 255, .6);
