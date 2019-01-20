@@ -20,8 +20,8 @@ export class KeywordService {
   constructor(private http: HttpClient,
               public messageService: MessageService) { }
 
-  getKeywords(filter: KeywordFilter): Observable<KeywordPair[]> {
-    return this.http.get<KeywordPair[]>(this.keywordsUrl, filter, httpOptions)
+  getKeywords(filter?: KeywordFilter): Observable<KeywordPair[]> {
+    return this.http.get<KeywordPair[]>(this.keywordsUrl)
       .pipe(
         tap(_ => this.log({status: MessageStatus.Info, title: "KeywordService", message: "Fetched Keywords"})),
         catchError(this.handleError('getKeywords', []))

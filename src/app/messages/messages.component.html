@@ -2,7 +2,7 @@
     <span>TEST Message</span>
 </button> -->
 <div *ngIf="messageService.messages.length"
-      class="row message-box sticky-top">
+      class="row message-box fixed-bottom">
       <div class="col">
         <ng-container *ngFor='let message of messageService.messages'>
               <div [@fadeInOutTranslate] (@fadeInOutTranslate.done)="closeMessage(message, $event)" *ngIf="message.open === true"

@@ -24,7 +24,7 @@ export class MessageService {
     if (index > -1) {
       setTimeout(() => {
         this.messages.splice(index, 1);
-      }, 3000);
+      }, 2000);
     }
   }
 }
