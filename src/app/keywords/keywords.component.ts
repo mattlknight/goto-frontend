@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, of, interval } from 'rxjs';
-import { KeywordPair, MessageStatus } from '../common/index';
+import { KeywordPair, KeywordFilter, MessageStatus } from '../common/index';
 import { KeywordService, MessageService } from '../services/index';
 
 const secondsCounter = interval(10000);
@@ -11,12 +11,16 @@ const secondsCounter = interval(10000);
   styleUrls: ['./keywords.component.scss']
 })
 export class KeywordsComponent implements OnInit {
+  limit: number;
+  sort_asc: boolean;
   keywords: KeywordPair[];
   selectedKeyword: KeywordPair;
 
   constructor(private keywordService: KeywordService, public messageService: MessageService) { }
 
   ngOnInit() {
+    this.limit = 5;
+    this.sort_asc = true;
     this.getKeywords();
     secondsCounter.subscribe( () => {
       this.getKeywords();
@@ -24,16 +28,8 @@ export class KeywordsComponent implements OnInit {
   }
 
   getKeywords(): void {
-    this.keywordService.getKeywords()
-        .subscribe(keywords => {
-          this.keywords = keywords;
-        }, err => {
-          console.error(`Error updating KeywordsComponent.keywords ${err}`);
-          this.messageService.add({status: MessageStatus.Danger, title: "KeywordService", message: `Error updating KeywordsComponent.keywords ${err}`});
-        }, () => {
-          console.log("Updated KeywordsComponent.keywords");
-          this.messageService.add({status: MessageStatus.Success, title: "KeywordService", message: "Fetched Keywords!"});
-        });
+    this.keywordService.getKeywords({limit: this.limit, sort_asc: this.sort_asc})
+        .subscribe(keywords => this.keywords = keywords);
   }
 
 }
