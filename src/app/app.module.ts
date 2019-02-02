@@ -11,7 +11,7 @@ import { faEdit } from '@fortawesome/free-regular-svg-icons';
 
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { KeywordService, MessageService } from './services/index';
+import { KeywordService, KeywordDetailResolverService, MessageService } from './services';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -47,6 +47,7 @@ library.add(faEdit);
   ],
   providers: [
     KeywordService,
+    KeywordDetailResolverService,
     MessageService
   ],
   bootstrap: [AppComponent]

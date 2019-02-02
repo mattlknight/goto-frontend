@@ -1,4 +1,4 @@
-import { KeywordPair } from './index';
+import { KeywordPair } from './';
 
 export const KEYWORD_PAIRS: KeywordPair[] = [
   { keyword: "ars", url: "https://arstechnica.com/" },

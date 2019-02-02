@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-// import { KeywordPair, KeywordFilter } from '../common/index';
+// import { KeywordPair, KeywordFilter } from '../common';
 import { KeywordsComponent } from '../keywords/keywords.component';
-// import { KeywordService } from '../services/index';
+// import { KeywordService } from '../services';
 
 @Component({
   selector: 'app-dashboard',

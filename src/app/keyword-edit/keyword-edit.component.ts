@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, of, interval } from 'rxjs';
-import { KeywordPair, MessageStatus } from '../common/index';
-import { KeywordService, MessageService } from '../services/index';
+import { KeywordPair, MessageStatus } from '../common';
+import { KeywordService, MessageService } from '../services';
 
 @Component({
   selector: 'app-keyword-edit',

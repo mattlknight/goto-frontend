@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
-import { KeywordPair, KeywordFilter, Message, MessageStatus } from '../common/index';
-// import { KEYWORD_PAIRS } from '../common/index';
+import { KeywordPair, KeywordFilter, Message, MessageStatus } from '../common';
+// import { KEYWORD_PAIRS } from '../common';
 import { MessageService } from './message.service';
 
 const httpOptions = {

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { KeywordPair } from '../common/index';
+import { KeywordPair } from '../common';
 
 @Component({
   selector: 'app-keyword-detail',

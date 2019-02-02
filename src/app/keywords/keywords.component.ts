@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, of, interval } from 'rxjs';
-import { KeywordPair, KeywordFilter, MessageStatus } from '../common/index';
-import { KeywordService, MessageService } from '../services/index';
+import { KeywordPair, KeywordFilter, MessageStatus } from '../common';
+import { KeywordService, MessageService } from '../services';
 
 const secondsCounter = interval(10000);
 

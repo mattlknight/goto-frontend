@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
-import { Message } from '../common/index';
-import { MessageService } from '../services/index';
+import { Message } from '../common';
+import { MessageService } from '../services';
 
 @Component({
   selector: 'app-messages',
