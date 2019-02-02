@@ -37,6 +37,15 @@ export class KeywordService {
       );
   }
 
+  postKeyword(keyword: KeywordPair): Observable<KeywordPair> {
+    const url = `${this.keywordsUrl}`;
+
+    return this.http.post<KeywordPair>(url, keyword).pipe(
+        tap(_ => this.log({status: MessageStatus.Info, title: "KeywordService", message: `Posted Keyword ${keyword}`})),
+        catchError(this.handleError<KeywordPair>(`postKeyword keyword=${keyword}`))
+      );
+  }
+
   redirectToKeyword(keyword: KeywordPair): void {
       this.messageService.add({status: MessageStatus.Info, title: "KeywordService", message: "FIX ME, should log tracking and redirec to " + keyword.url });
   }
