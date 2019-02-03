@@ -3,7 +3,7 @@ import { Observable, of, interval } from 'rxjs';
 import { KeywordPair, KeywordFilter, MessageStatus } from '../common';
 import { KeywordService, MessageService } from '../services';
 
-const secondsCounter = interval(10000);
+const secondsCounter = interval(30000);
 
 @Component({
   selector: 'app-keywords',

@@ -16,7 +16,7 @@ export class MessageService {
   add(message: Message) {
     message.open = true;
     this.messages.push(message);
-    setTimeout(() => { message.open = false; }, 5000);
+    setTimeout(() => { message.open = false; }, 3000);
   }
 
   close(message: Message) {

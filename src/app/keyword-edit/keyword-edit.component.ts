@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, of, interval } from 'rxjs';
-import { KeywordPair, MessageStatus } from '../common';
-import { KeywordService, MessageService } from '../services';
+import { ActivatedRoute }     from '@angular/router';
+// import { Observable, of, interval } from 'rxjs';
+import { KeywordPair } from '../common';
+// import { KeywordService, MessageService } from '../services';
 
 @Component({
   selector: 'app-keyword-edit',
@@ -11,7 +12,7 @@ import { KeywordService, MessageService } from '../services';
 export class KeywordEditComponent implements OnInit {
   keyword: KeywordPair;
 
-  constructor(private keywordService: KeywordService, public messageService: MessageService) { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.route.data

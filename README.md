@@ -14,9 +14,14 @@
  - Atom Packages
    - atom-beautify
    - atom-ide-ui
+   - atom-typescript
    - ide-css
    - linter-cass-lint
    - sort-lines
+- If you run into an issue where ng serve does not detect file system changes, you may need to run this, (lost on reboot)
+  - `sudo sysctl fs.inotify.max_user_watches=524288`
+  - `sudo sysctl -p --system`
+  - To make persistent: `echo fs.inotify.max_user_watches=524288 | sudo tee /etc/sysctl.d/40-max-user-watches.conf && sudo sysctl --system`
 
 ## Development server
 
