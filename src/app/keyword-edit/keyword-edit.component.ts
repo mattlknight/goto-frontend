@@ -9,10 +9,15 @@ import { KeywordService, MessageService } from '../services';
   styleUrls: ['./keyword-edit.component.scss']
 })
 export class KeywordEditComponent implements OnInit {
+  keyword: KeywordPair;
 
   constructor(private keywordService: KeywordService, public messageService: MessageService) { }
 
   ngOnInit() {
+    this.route.data
+    .subscribe((data: { keyword: KeywordPair }) => {
+      this.keyword = data.keyword;
+    });
   }
 
 }
